@@ -1,0 +1,17 @@
+CC = gcc
+TARGET = app.out
+OBJS = main.o kor.o usa.o
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	gcc -o $(TARGET) $(OBJS)
+
+main.o:
+	gcc -c main.c
+
+kor.o:
+	gcc -c kor.c
+
+usa.o:
+	gcc -c usa.c

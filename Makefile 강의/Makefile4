@@ -1,0 +1,16 @@
+CC = gcc
+OBJS = main.o kor.o usa.o
+CFLAGS = -Wall
+LDFLAGS = -lc
+TARGET = app.out
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+.c.o :
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean :
+	@rm -f $(OBJS) $(TARGET)
